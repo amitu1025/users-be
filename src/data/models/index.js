@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-import { UsersSchema } from './schemas/index.js';
+import { UsersSchema } from "./schemas/index.js";
 
 export const models = {
-	Users: mongoose.model('users', UsersSchema),
+  Users: mongoose.model("users", UsersSchema),
 };

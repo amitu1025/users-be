@@ -1,4 +1,4 @@
-import os from 'os';
+import os from "os";
 
 /**
  * Get all IP address of the server
@@ -7,27 +7,27 @@ import os from 'os';
  * @returns {Array}                          	Array of IPs
  */
 export const getListOfIPV4Address = ({ skipLocalhost = false } = {}) => {
-	const ifaces = os.networkInterfaces();
+  const ifaces = os.networkInterfaces();
 
-	let result = [];
+  let result = [];
 
-	Object.keys(ifaces).forEach(function (ifname) {
-		ifaces[ifname].forEach(function (iface) {
-			// skip non-ipv4 addresses
-			if ('IPv4' !== iface.family) {
-				return;
-			}
+  Object.keys(ifaces).forEach(function (ifname) {
+    ifaces[ifname].forEach(function (iface) {
+      // skip non-ipv4 addresses
+      if ("IPv4" !== iface.family) {
+        return;
+      }
 
-			if (skipLocalhost) {
-				// skip over internal (i.e. 127.0.0.1)
-				if (iface.internal !== false) {
-					return;
-				}
-			}
+      if (skipLocalhost) {
+        // skip over internal (i.e. 127.0.0.1)
+        if (iface.internal !== false) {
+          return;
+        }
+      }
 
-			result.push(iface.address);
-		});
-	});
+      result.push(iface.address);
+    });
+  });
 
-	return result;
+  return result;
 };

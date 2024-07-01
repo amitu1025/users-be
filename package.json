@@ -16,14 +16,6 @@
     "clean": "rimraf logs",
     "prepare": "husky install"
   },
-  "keywords": [
-    "boilerplate",
-    "GraphQL",
-    "Apollo",
-    "Node.js",
-    "MongoDB",
-    "server"
-  ],
   "author": "Amit Upadhyay",
   "license": "MIT",
   "devDependencies": {
